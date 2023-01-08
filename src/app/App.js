@@ -1,10 +1,8 @@
-import {Typography} from "@mui/material";
+import Register from "../pages/register";
 
 function App() {
   return (
-    <div className="">
-      <Typography>Hello World!</Typography>
-    </div>
+    <Register/>
   );
 }
 
