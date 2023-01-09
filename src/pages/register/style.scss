@@ -9,7 +9,7 @@ body{
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #ecc6ec;
+  background-color: #d1fae5;
 
   .containerWrapper{
     .titleContainer{
@@ -21,16 +21,21 @@ body{
 
       .heading{
         font-size: 25px;
-        font-weight: bolder;
+        font-weight: 900;
+        color: #713f12;
+        font-family: monospace;
       }
       .title{
         font-size: 18px;
         margin-bottom: 15px;
+        font-family: sans-serif;
+        font-weight: bold;
       }
     }
-    background-color: #eb99ff;
+    background-color: #86efac;
     padding: 30px 60px;
     border-radius: 10px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5);
     form{
       display: flex;
       flex-direction: column;
@@ -39,7 +44,7 @@ body{
       input{
         width: 325px;
         padding: 15px;
-        border-radius: 5px;
+        border-radius: 10px;
         border: none;
         &::placeholder{
           color: rgb(150,140,130);
@@ -56,18 +61,25 @@ body{
       button{
         width: 350px;
         padding: 15px 60px;
-        background-color: dodgerblue;
+        background-color: #1e40af;
         border: none;
-        border-radius: 5px;
+        border-radius: 10px;
         color: white;
-        font-size: 16px;
+        font-family: Calibri;
+        font-size: 20px;
         font-weight: bolder;
         cursor: pointer;
+      }
+      button:hover{
+        background-color: #1d4ed8;
+        color: #f9fafb;
+
       }
     }
     p{
       margin-top: 15px;
       text-align: center;
+      color: #4b5563;
     }
   }
 }

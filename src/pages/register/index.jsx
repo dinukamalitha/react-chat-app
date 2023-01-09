@@ -19,8 +19,8 @@ class Register extends Component {
                         <input type="file" id="file" style={{display:'none'}}/>
                         <label htmlFor="file">
                             <div className="label" style={{display:'flex'}}>
-                                <img src={File} width="40px" style={{marginLeft:'5px'}}/>
-                                <span style={{display:'flex',marginLeft:'5px',alignItems:'center',color:'white'}}>Add an image</span>
+                                <img src={File} alt="ADD" width="40px" style={{marginLeft:'5px',cursor:'pointer'}}/>
+                                <span style={{display:'flex',marginLeft:'5px',alignItems:'center',cursor:'pointer'}}>Add an image</span>
                             </div>
 
                         </label>
