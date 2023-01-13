@@ -1,7 +1,7 @@
 import {Component} from "react";
 import React from "react";
 import "./style.scss";
-import File from "../../assets/imgs/file.png"
+import Add from "../../assets/imgs/addAvatar.png"
 
 class Register extends Component {
     render() {
@@ -19,7 +19,7 @@ class Register extends Component {
                         <input type="file" id="file" style={{display:'none'}}/>
                         <label htmlFor="file">
                             <div className="label" style={{display:'flex'}}>
-                                <img src={File} alt="ADD" width="40px" style={{marginLeft:'5px',cursor:'pointer'}}/>
+                                <img src={Add} alt="ADD" width="40px" style={{marginLeft:'5px',cursor:'pointer'}}/>
                                 <span style={{display:'flex',marginLeft:'5px',alignItems:'center',cursor:'pointer'}}>Add an image</span>
                             </div>
 
