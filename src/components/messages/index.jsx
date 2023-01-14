@@ -1,5 +1,6 @@
 import {Component} from "react";
 import React from "react";
+import Message from "../message/message";
 
 class Messages extends Component{
     constructor(props) {
@@ -8,7 +9,15 @@ class Messages extends Component{
 
     render() {
         return(
-            <div/>
+            <div className="messages">
+                <Message/>
+                <Message/>
+                <Message/>
+                <Message/>
+                <Message/>
+                <Message/>
+                <Message/>
+            </div>
         );
     }
 }
