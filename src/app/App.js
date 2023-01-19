@@ -4,9 +4,9 @@ import Home from "../pages/home";
 
 function App() {
   return (
-    // <Register/>
+    <Register/>
     //   <Login/>
-    <Home/>
+    // <Home/>
   );
 }
 
