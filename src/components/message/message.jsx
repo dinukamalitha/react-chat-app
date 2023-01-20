@@ -1,27 +1,39 @@
-import {Component} from "react";
-import React from "react";
-import Profile2 from "../../assets/imgs/anne.jpg";
-import Profile3 from "../../assets/imgs/penny.jpg";
+import React, { useContext, useEffect, useRef } from "react";
+import { AuthContext } from "../../context/authContext";
+import { ChatContext } from "../../context/chatContext";
 
-class Message extends Component{
-    constructor(props) {
-        super(props);
-    }
+const Message = ({ message }) => {
+    const { currentUser } = useContext(AuthContext);
+    const { data } = useContext(ChatContext);
 
-    render() {
-        return(
-            <div className="message owner">
-                <div className="message-info">
-                    <img src={Profile2} alt=""/>
-                    <span>Just Now</span>
-                </div>
-                <div className="message-content">
-                    <p>hello</p>
-                    <img src={Profile3} alt=""/>
-                </div>
+    const ref = useRef();
+
+    useEffect(() => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    }, [message]);
+
+    return (
+        <div
+            ref={ref}
+            className={`message ${message.senderId === currentUser.uid && "owner"}`}
+        >
+            <div className="message-info">
+                <img
+                    src={
+                        message.senderId === currentUser.uid
+                            ? currentUser.photoURL
+                            : data.user.photoURL
+                    }
+                    alt=""
+                />
+                <span>just now</span>
             </div>
-        );
-    }
-}
+            <div className="message-content">
+                <p>{message.text}</p>
+                {message.img && <img src={message.img} alt="" />}
+            </div>
+        </div>
+    );
+};
 
 export default Message;

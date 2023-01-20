@@ -1,24 +1,21 @@
-import {Component} from "react";
-import React from "react";
-import Profile1 from "../../assets/imgs/alex.jpeg"
+import React, { useContext } from 'react';
+import {signOut} from "firebase/auth";
+import { auth } from '../../firebase/firebase';
+import { AuthContext } from '../../context/authContext';
 
-class Navbar extends Component{
-    constructor(props) {
-        super(props);
-    }
+const Navbar = () => {
+    const {currentUser} = useContext(AuthContext);
 
-    render() {
-        return(
-            <div className="navbar">
-                <span className="logo">Din-Chat</span>
-                <div className="user">
-                    <img src={Profile1} alt=""/>
-                    <span>Alex</span>
-                    <button>Logout</button>
-                </div>
+    return (
+        <div className='navbar'>
+            <span className="logo">Lama Chat</span>
+            <div className="user">
+                <img src={currentUser.photoURL} alt="" />
+                <span>{currentUser.displayName}</span>
+                <button onClick={()=>signOut(auth)}>logout</button>
             </div>
-        );
-    }
+        </div>
+    )
 }
 
-export default Navbar;
+export default Navbar
